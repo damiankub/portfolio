@@ -1,23 +1,49 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,700,800,900')
 
-/* COLOR */
+/* FONT / COLOR */
+
 $fonts: 'OpenSans', sans-serif
+$fonts-light: 'OpenSans Light', sans-serif
 $font-color-w: #fff
 
 body
 	font-family: $fonts
+	font-size: 13px
+	
+/* EXTEND */
 
-/* MIXIN */
 .write-mode
 	writing-mode: tb-rl
 	font-weight: bold
+	padding-top: 10px
 	
+.fonts-style
+	font-family: $fonts
+	color: $font-color-w
+	
+.a-href
+	text-decoration: none
+	color: $font-color-w
+	font-weight: bold
+	&:hover
+		color: #44474a
+		
+/* EXTEND GRID BOX */
+
+.grid-box-small-size
+	width: 275px
+	height: 280px
+.grid-box-gix-size
+	width: 550px
+	height: 280px
+
 /* HEADER */
 
 .masthead
 	background: url("https://images.pexels.com/photos/547116/pexels-photo-547116.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb")
 	background-size: 100% 100%
-	height: 953px
+	max-width: 100%
+	height: auto
 	border: 1px solid
 
 .logo 
@@ -26,28 +52,271 @@ body
 	object-fit: cover
 	h2
 		margin-left: 10px
+		font-family: 'Merriweathe'
+		font-style: italic
 		color: $font-color-w
 		
 .masthead-text
 	color: $font-color-w
-	font-family: $fonts
+	font-family: $fonts-light
+	height: 700px
 	.container
 		display: flex
 		.picture-perfect
 			max-width: 640px
 			text-align: left
 			margin-top: 100px
+			h2
+				font-size: 60px
+			p
+				font-size: 13px
 		.phone 
 			text-align: right
-			width: 100%
-
+			margin: 200px 0 0 0
+			img
+				max-width: 70%
+			
 /* START SOMETHING */
+
 .start-something
 	
-	padding-top: 60px
 	display: flex
+	padding: 5rem 0px 5rem 0px
 	
+/* BOX GRID */
+
+.box-grid
+	@extend .fonts-style
+	font-size: 13px
 	
+	h2
+		font-family: $fonts-light
+		font-size: 30px
+	a
+		@extend .a-href
 		
+.container
+	.row
+		width: 100%
+		justify-content: center
+		.box-pink
+			background-color: #f5989d
+			@extend .grid-box-small-size
+		.box-dark-blue
+			background-color: #615f7d
+			@extend .grid-box-small-size
+		.box-clients
+			background-image: url("https://images.pexels.com/photos/325265/pexels-photo-325265.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb")
+			background-size: 100% 100%
+			@extend .grid-box-small-size
+		.box-purple
+			background-color: #bd8cbf
+			@extend .grid-box-small-size
+			/* ROW */
+		.box-sign-up
+			background-color: #bd8cbf
+			background-image: url("https://images.pexels.com/photos/259703/pexels-photo-259703.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb")
+			background-size: 100% 100%
+			@extend .grid-box-gix-size
+		.box-green
+			background-color: #82ca9c
+			@extend .grid-box-small-size
+		.box-start
+			background-color: #bd8cbf
+			background-image: url("https://images.pexels.com/photos/237180/pexels-photo-237180.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb")
+			background-size: 100% 100%
+			@extend .grid-box-small-size
+	[class*='box']
+		display: flex
+		flex-wrap: wrap
+		&:hover
+			opacity: 0.8
+			transition: .3s
+			
+/* DETAILS */
+
+.look
+	h2
+		font-size: 35px
+		padding: 20px 0px 50px 0px
+.details
+	.container
+		.row
+			.look-bold
+				font-weight: bold
+			
+/* POWER */
+
+.power
+	background-image: url("https://zapodaj.net/images/2249eba4e194e.jpg")
+	color: $font-color-w
+	background-size: cover
+	.container
+		padding: 0px 0px 80px 0px
+		h2
+			font-size: 60px
+			padding: 20rem 0px 10px 0px
+		a
+			@extend .a-href
+				
+/* ONBOARD */
+
+.onboard
+	background-color: #82ca9c
+	color: $font-color-w
+	padding-bottom: 100px
+	.write-mode
+		padding-top: 50px
+				
+/* BUY NOW*/
+
+.buy-now
+	background-color: #f6f7fa
+	padding-bottom: 100px
+	.write-mode
+		padding-top: 50px
+	.container
+		.col-lg-6
+			padding: 20px
+			&:hover
+				background-color: #ffffff
+				box-shadow: 0 0 20px 1px black
+			button
+				background-color: #e1e1e1
+				margin: 10px 0px 10px 0px
+				&:hover
+					background-color: #bd8cbf
+			.btn-buy
+				background-color: #82ca9c
+				padding: 10px 20px 10px 20px
+				&:hover
+					background-color: #5e9572
+			i
+				color: #c5c5c5
+				margin-top: 10px
+				&:hover
+					color: #000000
+					
+/* FOOTER */
+
+footer
+	background-color: #192431
+	color: $font-color-w
+	padding-bottom: 100px
+	.container
+		padding: 5rem 0px 10px 0px
+		.row
+			.col-6
+				padding-top: 100px
+	ul
+		list-style: none
+		padding: 0
+	.form-control
+		width: 70%
+		border-radius: 0.25rem 0rem 0rem 0.25rem 
+		background-clip: border-box
+	.btn
+		border-radius: 0rem 0.25rem 0.25rem 0rem 
+
+/* DESKTOP */
+
+@media (max-width: 1200px) and (min-width: 992px)
+
+	.write-mode
+		visibility: hidden
 		
+	/* HEADER */
+	
+	.masthead
+		background-size: cover
+		.container
+			.phone
+				margin: 300px 0 0 0
+				
+	/*  GRID BOX */
+	
+	.grid-box-small-size
+		width: 220px
+		height: 280px
+	.grid-box-gix-size
+		width: 440px
+		height: 280px
+
+/* LARGE TABLETS */
+
+@media (max-width: 992px) and (min-width: 768px)
+
+	/* HEADER */
+	
+	.masthead-text
+		.container
+			.phone
+				margin: 400px 0 0 0
+				
+/* TABLETS */
+
+@media (max-width: 768px) and (min-width: 448px)
+
+	.write-mode
+		visibility: hidden
+
+	/* GRID BOX */
+	
+	.grid-box-small-size
+		width: 200px
+		height: 280px
+	.grid-box-gix-size
+		width: 400px
+		height: 280px
+		
+	/* HEADER */
+		
+	.masthead
+		background-size: cover
+		height: 350px
+	.masthead-text
+		.container
+			.picture-perfect
+				margin-top: 0px
+			.phone
+				visibility: hidden
+				img
+					width: 10px
+					
+	/* FOOTER */
+	
+	footer
+		padding-left: 10px
+		
+/* SMARTPHON */	
+
+@media (max-width: 447px)
+
+	.write-mode
+		visibility: hidden
+		
+	/* HEADER */
+		
+	.masthead
+		background-size: cover
+	.masthead-text
+		height: 300px
+		.container
+			.picture-perfect
+				margin-top: 0px
+			.phone
+				visibility: hidden
+				img
+					width: 10px
+					
+	/* GRID BOX */
+
+	.box-grid
+		padding-left: 20px
+
+	/* FOOTER */
+	
+	footer
+		padding-left: 10px
+				
 		
