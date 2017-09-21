@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,700,800,900')
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300i,400')
 
 /* FONT / COLOR */
 
-$fonts: 'OpenSans', sans-serif
+$fonts: 'Open Sans', sans-serif
 $fonts-light: 'OpenSans Light', sans-serif
 $font-color-w: #fff
+$font-size: 13px
 
 body
 	font-family: $fonts
-	font-size: 13px
+	font-size: $font-size
 	
 /* EXTEND */
 
@@ -26,14 +27,14 @@ body
 	color: $font-color-w
 	font-weight: bold
 	&:hover
-		color: #44474a
+		color: #3333CC
 		
 /* EXTEND GRID BOX */
 
 .grid-box-small-size
 	width: 275px
 	height: 280px
-.grid-box-gix-size
+.grid-box-big-size
 	width: 550px
 	height: 280px
 
@@ -41,7 +42,8 @@ body
 
 .masthead
 	background: url("https://images.pexels.com/photos/547116/pexels-photo-547116.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb")
-	background-size: 100% 100%
+	background-size: cover
+	background-position: 0% 80%
 	max-width: 100%
 	height: auto
 	border: 1px solid
@@ -68,6 +70,7 @@ body
 			margin-top: 100px
 			h2
 				font-size: 60px
+				padding-bottom: 30px
 			p
 				font-size: 13px
 		.phone 
@@ -79,9 +82,9 @@ body
 /* START SOMETHING */
 
 .start-something
-	
-	display: flex
-	padding: 5rem 0px 5rem 0px
+	padding: 80px 0px 80px 0px
+	h2
+		padding: 0px 0px 20px 0px
 	
 /* BOX GRID */
 
@@ -117,7 +120,7 @@ body
 			background-color: #bd8cbf
 			background-image: url("https://images.pexels.com/photos/259703/pexels-photo-259703.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb")
 			background-size: 100% 100%
-			@extend .grid-box-gix-size
+			@extend .grid-box-big-size
 		.box-green
 			background-color: #82ca9c
 			@extend .grid-box-small-size
@@ -130,16 +133,17 @@ body
 		display: flex
 		flex-wrap: wrap
 		&:hover
-			opacity: 0.8
-			transition: .3s
+			background: rgba(0,0,0,0.3)
+			transition: .2s
 			
 /* DETAILS */
 
 .look
 	h2
 		font-size: 35px
-		padding: 20px 0px 50px 0px
+		padding: 0px 0px 50px 0px
 .details
+	padding: 0px 0px 80px 0px
 	.container
 		.row
 			.look-bold
@@ -158,6 +162,9 @@ body
 			padding: 20rem 0px 10px 0px
 		a
 			@extend .a-href
+			padding: 5px
+			border-radius: 5px
+			background: rgba(0,0,0,0.9)
 				
 /* ONBOARD */
 
@@ -178,14 +185,20 @@ body
 	.container
 		.col-lg-6
 			padding: 20px
+			.anchor
+				color: $font-color-w
+				padding: 10px
+				border: 1px solid
+				border-radius: 6px
+				background-color: #e1e1e1
+				text-decoration: none
 			&:hover
 				background-color: #ffffff
-				box-shadow: 0 0 20px 1px black
-			button
-				background-color: #e1e1e1
-				margin: 10px 0px 10px 0px
-				&:hover
+				box-shadow: 0 0 30px 1px #bfbfbf
+				.anchor
 					background-color: #bd8cbf
+			button
+				color: $font-color-w
 			.btn-buy
 				background-color: #82ca9c
 				padding: 10px 20px 10px 20px
@@ -202,19 +215,26 @@ body
 footer
 	background-color: #192431
 	color: $font-color-w
-	padding-bottom: 100px
+	padding: 80px 0px 80px 0px
 	.container
 		padding: 5rem 0px 10px 0px
 		.row
-			.col-6
-				padding-top: 100px
+			h2
+				font-size: $font-size
+				font-weight: bold
+			.col-lg-4
+				padding: 20px 0px 0px 0px
+			.col-lg-6
+				.form-row
+					margin-left: 0px
 	ul
 		list-style: none
-		padding: 0
+		padding: 10px 0px 0px 0px
 	.form-control
 		width: 70%
 		border-radius: 0.25rem 0rem 0rem 0.25rem 
 		background-clip: border-box
+		
 	.btn
 		border-radius: 0rem 0.25rem 0.25rem 0rem 
 
@@ -229,6 +249,7 @@ footer
 	
 	.masthead
 		background-size: cover
+		background-position: 60% 0%
 		.container
 			.phone
 				margin: 300px 0 0 0
@@ -238,16 +259,19 @@ footer
 	.grid-box-small-size
 		width: 220px
 		height: 280px
-	.grid-box-gix-size
+	.grid-box-big-size
 		width: 440px
 		height: 280px
-
+		
 /* LARGE TABLETS */
 
 @media (max-width: 992px) and (min-width: 768px)
 
 	/* HEADER */
-	
+	.masthead
+		background-size: cover
+		background-position: 60% 0%
+		
 	.masthead-text
 		.container
 			.phone
@@ -262,10 +286,14 @@ footer
 
 	/* GRID BOX */
 	
+	.box-grid
+		.row
+			margin-left: 0px
+			
 	.grid-box-small-size
 		width: 200px
 		height: 280px
-	.grid-box-gix-size
+	.grid-box-big-size
 		width: 400px
 		height: 280px
 		
@@ -277,7 +305,9 @@ footer
 	.masthead-text
 		.container
 			.picture-perfect
-				margin-top: 0px
+				margin: 0 auto
+				width: 100%
+				text-align: center
 			.phone
 				visibility: hidden
 				img
@@ -303,7 +333,9 @@ footer
 		height: 300px
 		.container
 			.picture-perfect
-				margin-top: 0px
+				margin: 0 auto
+				width: 100%
+				text-align: center
 			.phone
 				visibility: hidden
 				img
@@ -312,7 +344,18 @@ footer
 	/* GRID BOX */
 
 	.box-grid
-		padding-left: 20px
+		.row
+			margin-left: 0px
+			
+	.grid-box-big-size
+		width: 275px
+		height: 280px
+		
+	/*BUY NOW */
+	.buy-now
+		.container
+			.row
+				margin-left: 0px
 
 	/* FOOTER */
 	
